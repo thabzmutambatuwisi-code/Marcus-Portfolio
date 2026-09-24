@@ -16,19 +16,93 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #0b0b14;
       color: white;
       line-height: 1.6;
+      overflow-x: hidden;
+
+      /* Mixed Marcus background */
+      background:
+        radial-gradient(circle at 15% 20%, rgba(138, 43, 226, 0.35), transparent 25%),
+        radial-gradient(circle at 85% 25%, rgba(0, 140, 255, 0.25), transparent 25%),
+        radial-gradient(circle at 50% 85%, rgba(255, 70, 180, 0.18), transparent 30%),
+        linear-gradient(135deg, #050510, #10052b, #061426, #17051f);
+
+      background-size: 200% 200%;
+      animation: backgroundMove 12s ease infinite;
+    }
+
+    @keyframes backgroundMove {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Floating background emojis */
+    .floating {
+      position: fixed;
+      z-index: -1;
+      font-size: 45px;
+      opacity: 0.12;
+      animation: float 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .f1 {
+      top: 15%;
+      left: 5%;
+    }
+
+    .f2 {
+      top: 35%;
+      right: 7%;
+      animation-delay: 2s;
+    }
+
+    .f3 {
+      top: 65%;
+      left: 10%;
+      animation-delay: 4s;
+    }
+
+    .f4 {
+      top: 80%;
+      right: 12%;
+      animation-delay: 1s;
+    }
+
+    .f5 {
+      top: 50%;
+      left: 48%;
+      animation-delay: 3s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-35px) rotate(10deg);
+      }
     }
 
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(15, 15, 30, 0.95);
+      background: rgba(5, 5, 15, 0.85);
+      backdrop-filter: blur(12px);
       padding: 18px;
       text-align: center;
-      border-bottom: 1px solid #29294a;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
     }
 
     nav a {
@@ -40,154 +114,210 @@
     }
 
     nav a:hover {
-      color: #a970ff;
+      color: #c084fc;
+      text-shadow: 0 0 12px #a855f7;
     }
 
     .hero {
-      min-height: 85vh;
+      min-height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 30px 20px;
-      background: linear-gradient(135deg, #111126, #32145c);
+      position: relative;
     }
 
     .hero h1 {
-      font-size: 60px;
+      font-size: 65px;
       margin-bottom: 15px;
+      animation: fadeDown 1.2s ease;
+      text-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
     }
 
     .hero h1 span {
-      color: #a970ff;
+      color: #c084fc;
     }
 
     .hero p {
-      max-width: 700px;
-      font-size: 20px;
-      color: #d4d4df;
+      max-width: 750px;
+      font-size: 21px;
+      color: #dddded;
+      animation: fadeUp 1.5s ease;
     }
 
     .button {
       display: inline-block;
-      margin-top: 25px;
-      padding: 13px 28px;
-      background: #8b5cf6;
+      margin-top: 28px;
+      padding: 14px 30px;
+      background: linear-gradient(90deg, #7c3aed, #a855f7);
       color: white;
       text-decoration: none;
       border-radius: 30px;
       font-weight: bold;
       transition: 0.3s;
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.35);
     }
 
     .button:hover {
-      transform: scale(1.05);
-      background: #a970ff;
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 0 35px rgba(168, 85, 247, 0.7);
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     section {
       max-width: 1100px;
       margin: auto;
-      padding: 80px 20px;
+      padding: 90px 20px;
     }
 
     section h2 {
       text-align: center;
-      font-size: 38px;
-      margin-bottom: 40px;
-      color: #a970ff;
+      font-size: 40px;
+      margin-bottom: 45px;
+      color: #c084fc;
+      text-shadow: 0 0 18px rgba(192, 132, 252, 0.45);
     }
 
     .about {
-      max-width: 800px;
+      max-width: 820px;
       margin: auto;
       text-align: center;
       font-size: 19px;
-      color: #d5d5df;
+      color: #d5d5e5;
+      background: rgba(15, 15, 35, 0.65);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 22px;
+      gap: 24px;
     }
 
     .card {
-      background: #161625;
-      border: 1px solid #29294a;
-      border-radius: 18px;
-      padding: 28px;
+      background: rgba(15, 15, 35, 0.72);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(192, 132, 252, 0.2);
+      border-radius: 20px;
+      padding: 30px;
       text-align: center;
-      transition: 0.3s;
+      transition: 0.4s;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      border-color: #8b5cf6;
+      transform: translateY(-12px) scale(1.02);
+      border-color: #a855f7;
+      box-shadow: 0 15px 40px rgba(139, 92, 246, 0.25);
     }
 
     .card h3 {
-      color: #c49aff;
-      margin-bottom: 10px;
+      color: #d8b4fe;
+      margin-bottom: 12px;
       font-size: 22px;
     }
 
     .card p {
-      color: #c7c7d2;
+      color: #c8c8d6;
     }
 
-    .video-box {
-      background: #161625;
-      border: 1px solid #29294a;
-      border-radius: 20px;
-      padding: 35px;
+    .creator-box {
+      background: rgba(10, 10, 25, 0.78);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(192,132,252,0.25);
+      border-radius: 25px;
+      padding: 45px;
       text-align: center;
+      transition: 0.4s;
     }
 
-    .video-box h3 {
-      font-size: 30px;
-      color: #c49aff;
+    .creator-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(124, 58, 237, 0.25);
+    }
+
+    .creator-box h3 {
+      font-size: 32px;
+      color: #d8b4fe;
       margin-bottom: 10px;
     }
 
     .subscriber-count {
-      font-size: 25px;
-      color: #a970ff;
+      font-size: 28px;
+      color: #c084fc;
       font-weight: bold;
-      margin: 15px 0;
+      margin: 18px 0;
     }
 
     .coming-soon {
-      margin-top: 20px;
+      margin-top: 25px;
       padding: 18px;
-      border-radius: 12px;
-      background: #202035;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.06);
       color: #d5d5df;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      background: #07070d;
+      padding: 35px;
+      background: rgba(3,3,8,0.9);
       color: #999;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
 
     @media (max-width: 600px) {
       .hero h1 {
-        font-size: 42px;
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 17px;
       }
 
       nav a {
         display: inline-block;
         margin: 5px;
-        font-size: 14px;
+        font-size: 13px;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- Floating Marcus vibes -->
+  <div class="floating f1">🎮</div>
+  <div class="floating f2">⚽</div>
+  <div class="floating f3">🎨</div>
+  <div class="floating f4">🎥</div>
+  <div class="floating f5">🏆</div>
 
   <nav>
     <a href="#about">About</a>
@@ -203,19 +333,21 @@
     <h1>Hey, I'm <span>Marcus!</span> 👋</h1>
 
     <p>
-      Gamer 🎮 • Soccer Player ⚽ • Artist 🎨 • YouTube Creator 🎥
+      🎮 Gamer • ⚽ Soccer Player • 🎨 Artist • 🎥 YouTube Creator
     </p>
 
-    <a class="button" href="#about">Explore My Portfolio 🚀</a>
+    <a class="button" href="#about">
+      Explore My World 🚀
+    </a>
   </div>
 
   <section id="about">
     <h2>About Me 👋</h2>
 
     <p class="about">
-      Hi! I'm Marcus. I love playing Roblox, playing soccer,
-      making YouTube videos, creating art and working on creative projects.
-      I'm always learning, creating and trying new things!
+      Hi! I'm Marcus. I love gaming, soccer, art and making videos.
+      I'm always learning, creating and trying new things.
+      Welcome to my little corner of the internet! 🌎🔥
     </p>
   </section>
 
@@ -236,12 +368,12 @@
 
       <div class="card">
         <h3>🎮 Gaming</h3>
-        <p>Gaming, especially Roblox.</p>
+        <p>Gaming and having fun with Roblox.</p>
       </div>
 
       <div class="card">
         <h3>⚽ Soccer</h3>
-        <p>Playing and enjoying soccer.</p>
+        <p>Playing, practicing and enjoying soccer.</p>
       </div>
 
       <div class="card">
@@ -293,7 +425,8 @@
   <section id="videos">
     <h2>My Videos 🎥</h2>
 
-    <div class="video-box">
+    <div class="creator-box">
+
       <h3>marcusrants</h3>
 
       <p>
@@ -305,8 +438,9 @@
       </div>
 
       <div class="coming-soon">
-        🎬 My best videos will be featured here soon!
+        🎬 My videos will be featured here soon!
       </div>
+
     </div>
   </section>
 
@@ -321,8 +455,8 @@
       </div>
 
       <div class="card">
-        <h3>✨ Future Art</h3>
-        <p>More artwork coming soon!</p>
+        <h3>✨ More Coming</h3>
+        <p>More artwork will be added soon!</p>
       </div>
 
     </div>
@@ -331,20 +465,23 @@
   <section id="soccer">
     <h2>Soccer ⚽</h2>
 
-    <div class="video-box">
-      <h3>My Love for Soccer</h3>
+    <div class="creator-box">
+
+      <h3>My Soccer Journey ⚽</h3>
 
       <p>
         Soccer is one of my favorite things to do.
-        I enjoy playing, improving my skills and having fun!
+        I enjoy playing, practicing my skills and having fun!
       </p>
+
     </div>
   </section>
 
   <section id="youtube">
     <h2>My YouTube 🎥</h2>
 
-    <div class="video-box">
+    <div class="creator-box">
+
       <h3>marcusrants</h3>
 
       <p>
@@ -358,6 +495,7 @@
       <a class="button" href="#">
         Visit My YouTube 🎬
       </a>
+
     </div>
   </section>
 
