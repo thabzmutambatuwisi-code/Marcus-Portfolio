@@ -1,1 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcus | Creator Portfolio</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0d18;
+      color: white;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #151528;
+      padding: 18px;
+      text-align: center;
+      border-bottom: 1px solid #29294a;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #a970ff;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #17172e, #25144a);
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #a970ff;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 650px;
+      color: #d2d2df;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 25px;
+      background: #8b5cf6;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 35px;
+      color: #a970ff;
+    }
+
+    .about {
+      text-align: center;
+      color: #d2d2df;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #17172a;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid #29294a;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #c49aff;
+    }
+
+    .youtube {
+      text-align: center;
+      background: #17172a;
+      border-radius: 20px;
+      padding: 35px;
+    }
+
+    .youtube h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .subscribers {
+      color: #a970ff;
+      font-size: 22px;
+      font-weight: bold;
+      margin: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #090910;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#youtube">YouTube</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Hey, I'm <span>Marcus!</span> 👋</h1>
+    <p>
+      Welcome to my personal portfolio! I'm a gamer, soccer player,
+      video creator and creative person who loves making cool things.
+    </p>
+    <a class="button" href="#about">Explore My Portfolio</a>
+  </div>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="about">
+      Hi! I'm Marcus. I enjoy playing Roblox 🎮, playing soccer ⚽,
+      making YouTube videos 🎥, creating art 🎨 and working on creative projects.
+      I'm always learning new things and having fun while doing it!
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>🎥 Video Making</h3>
+        <p>Creating and editing videos for YouTube.</p>
+      </div>
+
+      <div class="card">
+        <h3>🎨 Art</h3>
+        <p>Creating drawings and creative projects.</p>
+      </div>
+
+      <div class="card">
+        <h3>⚽ Soccer</h3>
+        <p>Playing and enjoying the beautiful game.</p>
+      </div>
+
+      <div class="card">
+        <h3>🎮 Gaming</h3>
+        <p>Playing Roblox and other games.</p>
+      </div>
+
+      <div class="card">
+        <h3>🗣️ Communication</h3>
+        <p>Sharing ideas and connecting with people.</p>
+      </div>
+
+      <div class="card">
+        <h3>📱 Social Media</h3>
+        <p>Creating and sharing content online.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <h2>My Achievements 🏆</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>📚 Reading</h3>
+        <p>Certificate for reading achievement.</p>
+      </div>
+
+      <div class="card">
+        <h3>⭐ School Prefect</h3>
+        <p>Certificate for being a school prefect.</p>
+      </div>
+
+      <div class="card">
+        <h3>🎨 Art</h3>
+        <p>Certificate for art and creativity.</p>
+      </div>
+
+      <div class="card">
+        <h3>🎥 YouTube</h3>
+        <p>Certificate connected to my YouTube journey.</p>
+      </div>
+
+      <div class="card">
+        <h3>📱 Social Media</h3>
+        <p>Certificate for social media skills.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="youtube">
+    <h2>My YouTube 🎥</h2>
+
+    <div class="youtube">
+      <h3>marcusrants</h3>
+      <p>Check out my YouTube journey!</p>
+      <div class="subscribers">96+ Subscribers 🔥</div>
+      <p>More videos coming soon!</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Marcus. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
